@@ -11,13 +11,13 @@
     }
 
     if (isset($_POST['tasks'])) {
-        $tasks = $_POST['tasks'];
+        $tasks = $_POST['task-input'];
     } else {
         $tasks = "";
         // Handle the error here
     }
 
-    $sql = "INSERT INTO `tasktable` (`Id`, `tasks`) VALUES ('0', '$tasks')";
+    $sql = "INSERT INTO `tasktable` (`Id`, `task-input`) VALUES ('0', '$tasks')";
 
     
     $rs = mysqli_query($conn, $sql);
@@ -43,7 +43,7 @@
     <div class="container">
         <header>
            <h1>TO DO-LIST</h1> 
-           <form action="" id="task-form">  
+           <form action="todo_db.php" id="task-form">  
             <input type="text" id="task-input" placeholder="What are your tasks for today?">
             <input type="submit" id="task-submit" value="Add">
            </form>
